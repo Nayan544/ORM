@@ -5,4 +5,4 @@ class ProductForm(forms.ModelForm):
     description = forms.CharField(widget=forms.Textarea(attrs={'rows': 3}))
     class Meta:
         model = Product
-        fields = ['name', 'category', 'company', 'price', 'quantity', 'net_content', 'image', 'description']
+        fields = ['name', 'category', 'company', 'price', 'quantity', 'net_content', 'description']

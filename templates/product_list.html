@@ -5,7 +5,6 @@
 <table class="table table-bordered table-striped">
   <thead class="table-success">
     <tr>
-      <th>image</th>
       <th>Name</th>
       <th>Category</th>
       <th>Compnay</th>
@@ -19,13 +18,6 @@
   <tbody>
     {% for product in products %}
     <tr>
-      <td>
-        {% if product.image %}
-          <img src="{{ product.image.url }}" alt="{{ product.name }}" width="80" height="80">
-        {% else %}
-          No image
-        {% endif %}
-      </td>
       <td>{{ product.name }}</td>
       <td>{{ product.category }}</td>
       <td>{{ product.company}}</td>
