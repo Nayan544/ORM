@@ -15,6 +15,8 @@ class Product(models.Model):
     quantity = models.PositiveIntegerField()
     description = models.TextField()
     company = models.CharField(max_length=100)
+    net_content=models.CharField(max_length=100)
+    image = models.ImageField(upload_to='product_images/', blank=True, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

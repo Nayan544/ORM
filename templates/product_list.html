@@ -5,11 +5,13 @@
 <table class="table table-bordered table-striped">
   <thead class="table-success">
     <tr>
+      <th>image</th>
       <th>Name</th>
       <th>Category</th>
       <th>Compnay</th>
       <th>Price (₹)</th>
       <th>Quantity</th>
+      <th>Net Content</th>
       <th>Description</th>
       <th>Actions</th>
     </tr>
@@ -17,11 +19,19 @@
   <tbody>
     {% for product in products %}
     <tr>
+      <td>
+        {% if product.image %}
+          <img src="{{ product.image.url }}" alt="{{ product.name }}" width="80" height="80">
+        {% else %}
+          No image
+        {% endif %}
+      </td>
       <td>{{ product.name }}</td>
       <td>{{ product.category }}</td>
-      <td>{{ product.Compnay }}</td>
+      <td>{{ product.company}}</td>
       <td>{{ product.price }}</td>
       <td>{{ product.quantity }}</td>
+      <td>{{ product.net_content }}</td>
       <td>{{ product.description }}</td>
       <td>
         <a href="{% url 'product_update' product.pk %}" class="btn btn-sm btn-primary">Edit</a>
